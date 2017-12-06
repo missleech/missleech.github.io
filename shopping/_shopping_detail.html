@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>키즈곰곰 가입하면 2천P 적립 > 쇼핑 > 날마다가게 > 엘포인트</title>
+  <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
+  <link rel="stylesheet" type="text/css" href="../common/css/commerce_new.css">
+  <link rel="stylesheet" type="text/css" href="../common/css/shopping.css">
+  <script type="text/javascript" src="../common/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../common/js/common.js"></script>
+  <script type="text/javascript" src="../common/js/swiper.min.js"></script>
+  <script type="text/javascript" src="https://lottemembers.github.io/store/common/js/gtm.js"></script>
+  <script>
+    $(window).scroll(function(){
+      var class_send = $('body').attr('class');
+      parent.window.postMessage(class_send,'*');
+    });
+    $(function(){
+      var swiper = new Swiper('.swiper-container', {
+        pagination:'.swiper-pagination',
+        onSlideChangeStart:function(){
+          var label = $('.swiper-container').find('.swiper-slide:eq('+swiper.activeIndex+') img').attr('alt');
+          ga('send','event','쇼핑','swipe',label);
+        }
+      });
+
+      //170414 추가 : 높이 값 셋팅
+      if ($('.ly_cont').height() >= 190) {
+        $('.ly_cont').css ('overflow','auto')
+      }
+      //170414.수정 : 필터 1depth 레이어 팝업 노출
+      $(".op_sc .btn_filter").click(function(){
+        if ($('.ly_cont').height() >= 190) {
+          $('.ly_cont').css ('overflow','auto')
+        }
+        if($("+.opt_list",this).css("display")=="none"){
+          $(".opt_list").slideUp(200);
+          $("+.opt_list",this).slideDown(200);
+        }else{
+          $(".opt_list").slideUp(200);
+        }
+      });
+      //140414 수정 : 레이어 리스트에서 선택시 효과
+      $('.op_sc .opt_list ul li > button').click(function(){
+        $(this).toggleClass('on');
+        $('.opt_list ul li > button').not(this).removeClass('on');
+        var ontxt = $('.opt_list ul li > button.on').text()
+        $('.opt_list').slideUp(200);
+        if (ontxt.length > 0) {
+          $(this).parents().siblings('.btn_filter').children('em').html(ontxt);
+        }
+        // 옵션 선택시 다음 옵션 활성화
+        $(this).parents('.op_sc').next().removeClass('disable');
+      });
+      //구매하기 버튼 클릭 시 레이어 노출
+      $("#btm_buy").click(function(){
+        var currentTop = $('body').scrollTop();
+        $(".ly_option .dim80").fadeIn().on('click',function(){
+          $('.ly_wrap').removeClass('show').siblings().fadeOut();
+          $('.opt_list').hide();
+
+          $('.contents').removeAttr('style');
+          $('body').scrollTop($('.contents').attr('data-scroll')).find('.contents').removeAttr('data-scroll');
+        });
+        $(".ly_wrap").addClass("show");
+        $('.contents').attr('data-scroll',currentTop);
+        $('.contents').css({
+          'position':'fixed',
+        })
+      });
+      $('.btn_up').click(function(){
+        var n = $('.btn_up').index(this);
+        var num = $(".amount:eq("+n+")").val();
+        num = $(".amount:eq("+n+")").val(num*1+1);
+      });
+      $('.btn_down').click(function(){
+        var n = $('.btn_down').index(this);
+        var num = $(".amount:eq("+n+")").val();
+        num = $(".amount:eq("+n+")").val(num*1-1);
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="wrap" class="commerce">
+    <div id="header"></div>
+    <div id="container" class="prd_detail">
+      <div class="top_bx">
+        <div class="info_bx">
+          <div class="infomation">
+            <p class="tag">
+              <span class="fill">TODAY 특가</span>
+            </p>
+            <h2 class="tit">키즈곰곰 가입하면 2천P 적립<br>우리아이 생각이 곰곰~</h2>
+            <div class="price">
+              <del class="sale">98,000P</del>
+              <span class="fixed">79,000P</span>
+              <div class="badge"><span>15%</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="img_bx">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="https://m.lpoint.com/upload/images/ha/event/201711/b1a99db41a1a4a9c8bce25035b0cf69b.png" alt="상품이미지 #1"></div>
+              <div class="swiper-slide"><img src="https://m.lpoint.com/upload/images/ha/event/201712/368645142e3848789a2055127e500be0.png" alt="상품이미지 #2"></div>
+              <div class="swiper-slide"><img src="https://m.lpoint.com/upload/images/ha/event/201711/5de01abb52a04d0d9d49eeb6d023fccf.jpg" alt="상품이미지 #3"></div>
+              <div class="swiper-slide"><img src="https://m.lpoint.com/upload/images/ha/event/201712/6b7bb8b34b3a432ba962a856c1b9e7fe.jpg" alt="상품이미지 #4"></div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="contents">
+        <div class="contents_bx">
+          <div class="prd_info">
+            <dl>
+              <dt>엘포인트</dt>
+              <dd>0.1% 적립 / L.POINT 5,000P 사용 가능</dd>
+              <dt>배송비</dt>
+              <dd>2,500원 (50,000원 이상 무료배송)<br>도서산간인 경우 추가배송비가 부과됩니다.<br>도서산간지역 7,000원</dd>
+            </dl>
+          </div>
+          <button type="button" class="btn_share" data-ga-cate="쇼핑" data-ga-label="키즈곰곰 가입하면 2천P 적립 이벤트-공유하기">공유하기</button>
+          <div class="prd_explain">
+            <dl>
+            <dt>스테인레스 알루미늄 밀크팬</dt>
+            <dd>
+              <p class="txt1">열전도가 좋은 알루미늄과 보온성이 높은 스테인레스의 특성을 활용하여 살짝 가볍게 데우는 요리부터 오랜 시간을 들여 푹 끓여내는 음식까지 다양한 요리에 사용할 수 있습니다.</p>
+              <p class="txt2">보온성과 내구서잉 뛰어난 스테인레스 사이에 열전도가 좋은 알루미늄을 끼워넣어 전면을 삼층 구조, 3중강으로 만들었습니다.</p>
+              <p class="txt1">보온성이 높기 때문에 육류 조리나 조림 등 속까지 깊게 맛을 베이게 하고 싶은 요리에 적합합니다.</p>
+            </dd>
+          </div>
+          <div class="btn_bx">
+            <a href="#" class="btn_prd_info" data-ga-cate="쇼핑" data-ga-label="키즈곰곰 가입하면 2천P 적립 이벤트-상품 기본정보"><span>상품 기본정보</span></a>
+            <a href="common_review.html" class="btn_review" data-ga-cate="쇼핑" data-ga-label="키즈곰곰 가입하면 2천P 적립 이벤트-상품 리뷰">
+              <span>상품 리뷰</span>
+              <span class="star_score"><span class="st_off"><span class="st_on" style="width:40%"></span></span></span>
+            </a>
+          </div>
+          <div class="mission_bx">
+            <div class="txt_bx">
+              <h3><img src="../images/commerce/common/tit_mission.png" alt="MISSION"></h3>
+              <div class="ttl">엘포인트 충전하고<br>쇼핑 할인 쿠폰 받기</div>
+              <div class="txt">미션 부가 설명</div>
+            </div>
+            <div class="change_bg1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="bottom1">
+      <div class="bg_bx">
+        <div class="l_btn">
+          <button type="button" id="btn_boxing" class="btn btn_boxing" data-ga-cate="쇼핑" data-ga-label="키즈곰곰 가입하면 2천P 적립 이벤트-스크랩"><span>스크랩</span><em class="count">152</em></button>
+        </div>
+        <div class="r_btn">
+          <button type="button" id="btm_buy" class="btn" data-ga-cate="쇼핑" data-ga-label="키즈곰곰 가입하면 2천P 적립 이벤트-구매하기"><span>구매하기</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ly_option">
+    <span class="dim80"></span>
+    <div class="ly_wrap ly_cart">
+      <div class="ly_ctnr">
+        <div class="ly_cont">
+          <p class="desc">옵션과 수량을 선택해 주세요.</p>
+          <div class="option_bx">
+            <form>
+              <div class="option_select">
+                <div class="op_sc">
+                  <div class="count_bx">
+                    <button type="button" class="btn_down">수량감소</button>
+                    <input type="text" name="amount" maxlength="5" class="amount" value="1">
+                    <button type="button" class="btn_up">수량증가</button>
+                  </div>
+                </div>
+                <div class="op_sc" style="display:block">
+                  <button type="button" class="btn_filter"><em>컬러 선택</em></button>
+                  <div class="opt_list">
+                    <ul>
+                    <li><button type="button">화이트</button></li>
+                    <li><button type="button">블랙</button></li>
+                    <li class="soldout"><button type="button">다크그레이</button></li>
+                    <li class="soldout"><button type="button">그레이</button></li>
+                    <li class="soldout"><button type="button">실버</button></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="op_sc disable">
+                  <button type="button" class="btn_filter"><em>사이즈 선택</em></button>
+                  <div class="opt_list">
+                    <ul>
+                    <li><button type="button">230</button></li>
+                    <li><button type="button">235</button></li>
+                    <li class="soldout"><button type="button">240</button></li>
+                    <li><button type="button">245</button></li>
+                    <li><button type="button">250</button></li>
+                    <li><button type="button">255</button></li>
+                    <li><button type="button">260</button></li>
+                    <li class="soldout"><button type="button">265</button></li>
+                    <li class="soldout"><button type="button">270</button></li>
+                    <li><button type="button">275</button></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="option_detail" style="display:block">
+                <div class="op_sc" style="display:block">
+                  <button type="button" class="btn_option_delete" onclick="(confirm('선택하신 상품을 삭제하시겠습니까?')) ? $(this).parents('.op_sc').remove() : '';">옵션 삭제</button>
+                  <div class="option_info">
+                    <div class="option">
+                      <p>실버</p>
+                    </div>
+                    <div class="price">
+                      <p>35,000</p>
+                    </div>
+                  </div>
+                  <div class="count_bx">
+                    <input type="button" class="btn_down"><label for="" class="blind">수량 감소</label>
+                    <input type="text" name="amount" value="1" size="3" class="amount"><label for="" class="blind">수량을 선택해 주세요.</label>
+                    <input type="button" class="btn_up"><label for="" class="blind">수량 증가</label>
+                  </div>
+                </div>
+                <div class="op_sc" style="display:block">
+                  <button type="button" class="btn_option_delete" onclick="(confirm('선택하신 상품을 삭제하시겠습니까?')) ? $(this).parents('.op_sc').remove() : '';">옵션 삭제</button>
+                  <div class="option_info">
+                    <div class="option">
+                      <p>실버</p>
+                      <p class="option_desc">16 inch (28cm)</p>
+                    </div>
+                    <div class="price">
+                      <p>35,000</p>
+                    </div>
+                  </div>
+                  <div class="count_bx">
+                    <input type="button" class="btn_down"><label for="" class="blind">수량 감소</label>
+                    <input type="text" name="amount" value="1" size="3" class="amount"><label for="" class="blind">수량을 선택해 주세요.</label>
+                    <input type="button" class="btn_up"><label for="" class="blind">수량 증가</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="ly_btm">
+          <div class="price_cont" style="display:block">
+            <div class="price_bx">
+              <dl>
+              <dt>총 금액</dt>
+              <dd class="total">70,000원</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="btm_bx">
+            <button type="button" id="ly_btn_buy" class="btn btn_bl btn_one on" onclick="parent.location.href='payment_buy_list.html'"><span>바로구매</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="panel"></div>
+</body>
+</html>

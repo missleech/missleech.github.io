@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>날마다가게 - 상품 리뷰</title>
+  <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
+  <link rel="stylesheet" type="text/css" href="../common/css/commerce_new.css">
+  <link rel="stylesheet" type="text/css" href="../common/css/shopping.css">
+  <script type="text/javascript" src="../common/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../common/js/common.js"></script>
+  <script>
+    $(function(){
+      //구매하기 버튼 클릭 시 레이어 노출
+      $(".review_lst .btn_re_delete").click(function(){
+        $('body').addClass('pinning hidden');
+        $('.ly_pop .dim90, .ly_wrap').fadeIn();
+        $('.ly_pop .dim90').on('click',function(){
+          $(".ly_pop .dim90, .ly_wrap").fadeOut();
+        });
+      });
+      //레이어 안에 있는 취소 버튼 클릭 시 레이어 닫힘
+      $(".ly_pop #ly_btn_cancel").click(function() {
+        $(".ly_pop .dim90, .ly_wrap").fadeOut();
+      });
+
+      //상품리뷰 본인여부 처리해주세요
+      $('.review_lst').on('click','.block',function(){
+        var own = prompt("본인인 경우 1 / 유저일 경우 2");
+        (own == 1) ? $(this).removeClass('block') : $(this).slideUp(function(){$(this).remove()});
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="wrap" class="commerce">
+    <div id="container" class="prd_review">
+      <div class="top_bx">
+        <h2>상품 리뷰<div class="badge bd1"><span class="num">999</span></div></h2>
+        <p class="star_score"><span class="st_off"><span class="st_on" style="width:80%"></span></span></p>
+        <p class="txt">상품을 구매하신 분들이<br>작성하신 상품 리뷰입니다</p>
+      </div>
+      <div class="contents">
+        <div class="review_lst">
+          <ul>
+          <li>
+            <p class="star_score"><span class="st_off"><span class="st_on" style="width:80%"></span></span></p>
+            <p class="txt">너무 좋아서 하나 더 사려구요. 선물하기에 제격이네요. 자주 이용할께요. 많이많이 파세요!</p>
+            <p class="desc"><span class="user">김*혜</span><span class="date">2016.12.21.</span></p>
+            <button type="button" class="btn_re_delete">옵션</button>
+          </li>
+          <li class="block">
+            <p class="star_score"><span class="st_off"><span class="st_on" style="width:100%"></span></span></p>
+            <p class="txt">너무 좋아서 하나 더 사려구요. 선물하기에 제격이네요. 자주 이용할께요. 많이많이 파세요!</p>
+            <p class="desc"><span class="user">김*혜</span><span class="date">2016.12.21.</span></p>
+            <button type="button" class="btn_re_delete">옵션</button>
+          </li>
+          <li>
+            <p class="star_score"><span class="st_off"><span class="st_on" style="width:20%"></span></span></p>
+            <p class="txt">너무 좋아서 하나 더 사려구요. 선물하기에 제격이네요. 자주 이용할께요. 많이많이 파세요!</p>
+            <p class="desc"><span class="user">김*혜</span><span class="date">2016.12.21.</span></p>
+            <button type="button" class="btn_re_delete">옵션</button>
+          </li>
+          <li>
+            <p class="star_score"><span class="st_off"><span class="st_on" style="width:20%"></span></span></p>
+            <p class="txt">너무 좋아서 하나 더 사려구요. 선물하기에 제격이네요. 자주 이용할께요. 많이많이 파세요!</p>
+            <p class="desc"><span class="user">김*혜</span><span class="date">2016.12.21.</span></p>
+            <button type="button" class="btn_re_delete">옵션</button>
+          </li>
+          <li>
+            <p class="star_score"><span class="st_off"><span class="st_on" style="width:60%"></span></span></p>
+            <p class="txt">너무 좋아서 하나 더 사려구요. 선물하기에 제격이네요. 자주 이용할께요. 많이많이 파세요!</p>
+            <p class="desc"><span class="user">김*혜</span><span class="date">2016.12.21.</span></p>
+            <button type="button" class="btn_re_delete">옵션</button>
+          </li>
+          <li>
+            <p class="star_score"><span class="st_off"><span class="st_on" style="width:60%"></span></span></p>
+            <p class="txt">너무 좋아서 하나 더 사려구요. 선물하기에 제격이네요. 자주 이용할께요. 많이많이 파세요!</p>
+            <p class="desc"><span class="user">김*혜</span><span class="date">2016.12.21.</span></p>
+            <button type="button" class="btn_re_delete">옵션</button>
+          </li>
+        </div>
+    </div>
+    <div id="bottom">
+      <div class="bg_bx">
+        <button id="btm_charge" class="btn btm_one on"><span>리뷰쓰기</span></button>
+      </div>
+    </div>
+  </div>
+  <div class="ly_pop">
+    <span class="dim90"></span>
+    <div class="ly_wrap">
+      <div class="ly_ctnr">
+        <button id="ly_btn_del" class="btn btn_bl"><span>삭제</span></button>
+        <button id="ly_btn_cancel" class="btn btn_wh"><span>취소</span></button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

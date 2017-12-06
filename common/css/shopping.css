@@ -1,0 +1,109 @@
+@charset "utf-8";
+/*
+ * #2017-11-06
+ * 날마다 가게 - 쇼핑
+ */
+body.is-bg:before { background-image:linear-gradient(333deg, #d4004a 0%, #009bfa 70%); }
+input[type="checkbox"]:checked { background-image:url(../../images/commerce/shopping/ico_check_active.png); }
+input[type="radio"]:checked { background-image:url(../../images/commerce/shopping/ico_radio_active.png); }
+
+/* 상품 리스트 */
+.prd_lst .sorting_bx .search_type { border-color:#d4004a; }
+.prd_lst .sorting_bx .search_type:before { background-image:url(../../images/commerce/shopping/ico_sticky_search.png); }
+.prd_lst .sorting_bx .filter_type { color:#d4004a; border-color:#d4004a; }
+.prd_lst .sorting_bx .filter_type:before { background-image:url(../../images/commerce/shopping/ico_sticky_filter.png); }
+.prd_lst .prd_contents_lst .img_bx > img { width:74px; height:74px; border-radius:100%; }
+.prd_lst .prd_contents_lst .info_bx .tag span { color:#d4004a; border-color:#d4004a; }
+.prd_lst .prd_contents_lst .info_bx .tag span.fill { color:#ffffff; border-color:#d4004a; background-color:#d4004a; }
+.prd_lst .prd_contents_lst .info_bx .badge { background-color:#d4004a; }
+.prd_lst .prd_contents_lst .info_bx .badge:before { border-top-color:#d4004a; }
+.prd_lst .prd_contents_lst .scrap_bx button.btn_boxing.active,
+.prd_lst .prd_contents_lst .scrap_bx button.btn_boxing.active[disabled="disabled"] { background-image:url(../../images/commerce/shopping/btn_scrap_active.png); }
+
+/* 상품 상세 */
+.prd_detail .top_bx .info_bx .tag span{ color:#d4004a; border-color:#d4004a; }
+.prd_detail .top_bx .info_bx .tag span.fill { border-color:#d4004a; background:#d4004a; }
+.prd_detail .top_bx .badge { background-color:#d4004a; }
+.prd_detail .top_bx .badge:before{ border-top-color:#d4004a; }
+.prd_detail .top_bx .img_bx { position:absolute;left:0;right:0;top:33.333333%; bottom:60px;z-index:10;text-align:center;display:flex; display:-webkit-flex; align-items:flex-end; -webkit-align-items:flex-end; }
+.prd_detail .top_bx .img_bx .swiper-pagination-bullet-active { background-color:#d4004a; }
+.prd_detail .contents .btn_share { background-image:url(../../images/commerce/shopping/btn_share.png); }
+.prd_detail .contents .btn_bx .btn_review .star_score .st_off .st_on { background-image:url(../../images/commerce/shopping/ico_rating_sm_active.png); }
+.prd_detail .contents .mission_bx .change_bg1{
+	background:-webkit-linear-gradient(144deg, #d4004a 0%, #009bfa 65%);
+	background:linear-gradient(-36deg, #d4004a 0%, #009bfa 65%);
+}
+
+/* 구매옵션 */
+.ly_pop .ly_ctnr .btn_bl,
+.ly_option .ly_btm .btn_bl { background-color:#d4004a; }
+.ly_pop .ly_ctnr .btn_wh { color:#d4004a; }
+
+/* 상품 구매 확인 */
+.prd_buy .price_info dl.total dd,
+.prd_buy .delivery_bx .none .address_info .btn_add { color:#d4004a; }
+.prd_buy .agree_bx ul li input[type=checkbox]:checked ~ .btn_guardian { background-color:#d4004a; }
+
+/* 상품 결제 */
+.prd_payment .point_bx .form_area input.on { background-image:url(../../images/commerce/shopping/ico_point_active.png); }
+.prd_payment .my_point b,
+.prd_payment .price_info dl dd.point span { color:#d4004a; }
+.prd_payment .price_info dl dd .btn_coupon_select,
+.payment_ways .empty > .btn { background-color:#d4004a; }
+.payment_ways > .item.active { border-color:#d4004a; }
+.payment_ways .toggle.lpay:before { background-image:url(../../images/commerce/shopping/ico_payment_lpay.png); }
+.payment_ways .toggle.mobile:before { background-image:url(../../images/commerce/shopping/ico_payment_mobile.png); }
+.payment_ways .toggle.credit:before { background-image:url(../../images/commerce/shopping/ico_payment_credit.png); }
+
+
+/* 결제 완료 */
+.prd_pay_cpl .info_bx .option ul li .ea  { color:#d4004a; }
+.prd_pay_cpl .price_info .badge { background-color:#d4004a; }
+.prd_pay_cpl .price_info .badge:before { border-top-color:#d4004a; }
+
+/* 주문 확인 */
+.prd_order_d .sec_info dl dd .invoice,
+.prd_order_d .sec_info dl dd.price,
+.prd_order_d .sec_info.delivery .address_info .name,
+.prd_order_d .sec_info.delivery .address_info .tel { color:#d4004a; }
+.prd_order_d .sec_info dl dd .btn { background-color:#d4004a; }
+
+/* 구매 내역 */
+.purchase_history .purchase_lst .ing .info_bx .tag span,
+.purchase_history .purchase_lst .info_bx .tag .d_day { color:#d4004a; border-color:#d4004a; }
+.purchase_history .purchase_lst .info_bx .desc_season { color:#d4004a; }
+.purchase_history .purchase_lst .info_bx .btn_go_link { background-color:#d4004a; }
+
+/* 리뷰 */
+.prd_review .top_bx h2 .badge .num { color:#d4004a; border-color:#d4004a; }
+.prd_review .top_bx h2 .badge { background-image:url(../../images/commerce/shopping/bg_bubble_arrow.png); }
+.prd_review .top_bx .star_score .st_off .st_on,
+.prd_review_ip .top_bx .star_score .st_off label.on { background-image:url(../../images/commerce/shopping/ico_rating_lg_active.png); }
+.prd_review_ip .input_cont .form_area2 span em { color:#d4004a; }
+.prd_review .review_lst .star_score .st_off .st_on { background-image:url(../../images/commerce/shopping/ico_rating_sm_active.png); }
+.prd_review .review_lst .block:before { background-image:url(../../images/commerce/shopping/ico_inform_lg.png); }
+
+/* 엘포인트 충전 */
+.pop_charge .top .info { background-image: url(../../images/commerce/shopping/ico_inform_lg.png); }
+.pop_charge .point_charge .price_button button { background-color:#d4004a; }
+.pop_charge .point_charge .form_area input.on { background-image:url(../../images/commerce/shopping/ico_point_active.png); }
+
+/* 미션선택 */
+.pop_mission_cp .mission_lst ul li label { border-color:#d4004a; }
+.pop_mission_cp .mission_lst ul li .point { color:#d4004a; }
+.pop_mission_cp #bottom .bg_bx button em { color:#d4004a; }
+
+/* 최근 배송지 */
+.pop_address1 .address_bx .ip_bx2 .search,
+.pop_address2 .card_bx .card input[type=radio]:checked+label { background-color:#d4004a; }
+.pop_address1 .noti_bx .btn_update { color:#d4004a; }
+
+.pop_prdchoice .contents .prc_choice_lst ul li .info_bx .option { color:#d4004a; }
+
+
+#bottom1 .bg_bx .btn_boxing.active{background-image:url(../../images/commerce/shopping/btn_scrap_active.png); }
+
+.misi_detail .top_bx .info_bx .tag span { color:#d4004a; border-color:#d4004a; }
+.misi_detail .contents .contents_bx .check_btn a { background-color:#d4004a; }
+.coupon_empty:before { background-image:url(../../images/commerce/shopping/ico_success.png); }
+.coupon_empty .link { background-color:#d4004a; }
